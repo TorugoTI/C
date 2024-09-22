@@ -32,7 +32,7 @@ void obterPrevisaoTempo(char* cidade) {
    dados.size = 0;
 
    char url[1000];
-   sprintf(url, "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=SUA_CHAVE_DE_API", cidade);
+   sprintf(url, "https://api.hgbrasil.com/weather", cidade);
 
    curl_global_init(CURL_GLOBAL_DEFAULT);
    curl = curl_easy_init();
@@ -84,10 +84,8 @@ int main() {
 
    cout << "Bem-vindo ao Aplicativo de Previsão do Tempo!" << endl;
 
-   cout << "Digite o nome da cidade: ";
+   cout << "Iremos mostrar a previsão de São Paulo: ";
    cin.ignore();
-   cin.getline(cidade, 100);
-
    obterPrevisaoTempo(cidade);
 
    return 0;
